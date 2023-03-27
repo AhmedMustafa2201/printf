@@ -1,6 +1,8 @@
-#include <math.h>
-#include <stdio.h>
 #include <unistd.h>
+#include <stdlib.h>
+#include <stdarg.h>
+#include <math.h>
+#include "main.h"
 
 /**
  * _putchar - print char
@@ -52,6 +54,17 @@ void handle_string(int *sum, char *s)
 	}
 }
 
+int power(int base, int exp)
+{
+	int result = 1, i = 0;
+
+	for (i = exp; i > 0; i--)
+	{
+		result *= base;
+	}
+	return (result);
+}
+
 /**
  * handle_int - catch integer byte.
  * @sum: pointer number of sum.
@@ -78,9 +91,9 @@ void handle_int(int *sum, int d)
 	*sum += count;
 	while (count)
 	{
-		temp =  d / pow(10, count - 1);
+		temp =  d / power(10, count - 1);
 		_putchar(48 + temp);
-		d -= (temp * floor(pow(10, count - 1)));
+		d -= (temp * power(10, count - 1));
 		count--;
 	}
 }
@@ -93,15 +106,15 @@ void handle_int(int *sum, int d)
  * @i: the number indicator.
  * Nothing to Return.
  */
-void handle_percision(char f, int sum, va_list ap, int i)
+void handle_percision(char f, int *sum, va_list ap, int *i)
 {
-	char c, s;
+	char c, *s;
 	int d;
 
 	switch (f)
 	{
 		case 's':
-			s = va_arg(ap, char);
+			s = va_arg(ap, char *);
 			handle_string(sum, s);
 			*i += 1;
 			break;
