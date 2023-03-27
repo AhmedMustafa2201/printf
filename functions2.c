@@ -21,7 +21,7 @@ int power(int base, int exp)
 {
 	int result = 1, i = 0;
 
-	for (i = exp; i > 0; i++)
+	for (i = exp; i > 0; i--)
 		result *= base;
 	return (result);
-}
+	}
