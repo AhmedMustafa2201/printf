@@ -107,5 +107,9 @@ void handle_percision(char f, int *sum, va_list ap, int *i)
 			handle_int(sum, d);
 			*i += 1;
 			break;
+		case '%':
+			_putchar('%');
+			*i += 1;
+			break;
 	}
 }
