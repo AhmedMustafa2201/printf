@@ -100,6 +100,7 @@ void handle_percision(char f, int *sum, va_list ap, int *i)
 			c = (char) va_arg(ap, int);
 			_putchar(c);
 			*i += 1;
+			*sum += 1;
 			break;
 		case 'd':
 		case 'i':
@@ -110,6 +111,7 @@ void handle_percision(char f, int *sum, va_list ap, int *i)
 		case '%':
 			_putchar('%');
 			*i += 1;
+			*sum += 1;
 			break;
 	}
 }
