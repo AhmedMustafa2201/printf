@@ -10,8 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	unsigned int i = 0;
-	int sum = 0;
+	int i = 0, sum = 0;
 	va_list ap;
 
 	va_start(ap, format);
