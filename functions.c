@@ -34,6 +34,12 @@ void handle_backslash(int *sum, char follow_char)
 	}
 }
 
+/**
+ * handle_string - catching string.
+ * @sum: pointer number of sum.
+ * @s: pointer to char.
+ * Nothing to Return.
+ */
 void handle_string(int *sum, char *s)
 {
 	int j = 0;
@@ -46,6 +52,12 @@ void handle_string(int *sum, char *s)
 	}
 }
 
+/**
+ * handle_int - catch integer byte.
+ * @sum: pointer number of sum.
+ * @d: the number itself.
+ * Nothing to Return.
+ */
 void handle_int(int *sum, int d)
 {
 	int count = 0, temp = 0, n;
@@ -73,7 +85,15 @@ void handle_int(int *sum, int d)
 	}
 }
 
-void handle_percision(char f, int sum, va_list ap, inti)
+/**
+ * handle_percision - grabbing switch logic to handle various prints.
+ * @f: the use case char.
+ * @sum: pointer number of sum.
+ * @ap: list of args from va_list type.
+ * @i: the number indicator.
+ * Nothing to Return.
+ */
+void handle_percision(char f, int sum, va_list ap, int i)
 {
 	char c, s;
 	int d;
