@@ -1,19 +1,7 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <stdarg.h>
-#include <math.h>
 #include "main.h"
-
-/**
- * _putchar - print char
- * @c: a character.
- * Return: Printed char.
- */
-int _putchar(char c)
-{
-	return (write(1, &c, 1));
-}
-
 
 /**
  * handle_backslash - catch backslash charachter.
@@ -54,16 +42,6 @@ void handle_string(int *sum, char *s)
 	}
 }
 
-int power(int base, int exp)
-{
-	int result = 1, i = 0;
-
-	for (i = exp; i > 0; i--)
-	{
-		result *= base;
-	}
-	return (result);
-}
 
 /**
  * handle_int - catch integer byte.
