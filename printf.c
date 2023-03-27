@@ -10,8 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, sum = 0, d;
-	char c, *s;
+	int i = 0, sum = 0;
 	va_list ap;
 
 	va_start(ap, format);
@@ -23,7 +22,7 @@ int _printf(const char *format, ...)
 		{
 			handle_backslash(&sum, format[i + 1]);
 		}
-		else if (format[i] == '&')
+		else if (format[i] == '%')
 		{
 			handle_percision(format[i + 1], &sum, ap, &i);
 		}
