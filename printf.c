@@ -10,7 +10,7 @@
  */
 int _printf(const char *format, ...)
 {
-	int i = 0, sum = 0;
+	int i = 0, sum = 0, res = 0;
 	va_list ap;
 
 	va_start(ap, format);
@@ -20,11 +20,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '\\')
 		{
-			handle_backslash(&sum, format[i + 1]);
+			res = handle_backslash(&sum, format[i + 1]);
+			if (res == -1)
+			{
+				return (-1);
+			}
 		}
 		else if (format[i] == '%')
 		{
-			handle_percision(format[i + 1], &sum, ap, &i);
+			res = handle_percision(format[i + 1], &sum, ap, &i);
+			if (res == -1)
+				return (-1);
 		}
 		else
 		{

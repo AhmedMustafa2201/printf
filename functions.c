@@ -9,7 +9,7 @@
  * @follow_char: the next char.
  * Nothing to Return.
  */
-void handle_backslash(int *sum, char follow_char)
+int  handle_backslash(int *sum, char follow_char)
 {
 	if (follow_char == 'n' || follow_char == 'a' || follow_char == 'b' ||
 			follow_char == 'f' || follow_char == 'r' ||
@@ -18,11 +18,16 @@ void handle_backslash(int *sum, char follow_char)
 		_putchar('\\' + follow_char);
 		*sum = *sum + 1;
 	}
+	else if (follow_char == ' ')
+	{
+		return (-1);
+	}
 	else
 	{
 		_putchar(follow_char);
 		*sum += 1;
 	}
+	return (0);
 }
 
 /**
@@ -85,7 +90,7 @@ void handle_int(int *sum, int d)
  * @i: the number indicator.
  * Nothing to Return.
  */
-void handle_percision(char f, int *sum, va_list ap, int *i)
+int handle_percision(char f, int *sum, va_list ap, int *i)
 {
 	char c, *s;
 	long d;
@@ -114,5 +119,8 @@ void handle_percision(char f, int *sum, va_list ap, int *i)
 			*i += 1;
 			*sum += 1;
 			break;
+		default:
+			return (-1);
 	}
+	return (0);
 }
