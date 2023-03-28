@@ -18,10 +18,6 @@ int  handle_backslash(int *sum, char follow_char)
 		_putchar('\\' + follow_char);
 		*sum = *sum + 1;
 	}
-	else if (follow_char == ' ')
-	{
-		return (-1);
-	}
 	else
 	{
 		_putchar(follow_char);
@@ -120,7 +116,10 @@ int handle_percision(char f, int *sum, va_list ap, int *i)
 			*sum += 1;
 			break;
 		default:
-			return (-1);
+			_putchar(' ');
+			*i += 1;
+			*sum += 1;
+			break;
 	}
 	return (0);
 }
