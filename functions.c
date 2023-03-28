@@ -100,7 +100,14 @@ int handle_percision(char f, int *sum, va_list ap, int *i)
 			break;
 		case 'c':
 			c = (char) va_arg(ap, int);
-			_putchar(c);
+			if (c == -48)
+			{
+				_putchar('*');
+			}
+			else
+			{
+				_putchar(c);
+			}
 			*i += 1;
 			*sum += 1;
 			break;
@@ -116,10 +123,7 @@ int handle_percision(char f, int *sum, va_list ap, int *i)
 			*sum += 1;
 			break;
 		default:
-			_putchar(' ');
-			*i += 1;
-			*sum += 1;
-			break;
+			return (-1);
 	}
 	return (0);
 }
