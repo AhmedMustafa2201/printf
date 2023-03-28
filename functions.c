@@ -21,6 +21,7 @@ void handle_backslash(int *sum, char follow_char)
 	else
 	{
 		_putchar(follow_char);
+		*sum += 1;
 	}
 }
 
