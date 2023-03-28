@@ -18,9 +18,6 @@ int _printf(const char *format, ...)
 		return (-1);
 	while (format[i] != '\0')
 	{
-		if (format[i + 1] == '\0')
-			return (-1);
-
 		if (format[i] == '\\')
 		{
 			handle_backslash(&sum, format[i + 1]);
