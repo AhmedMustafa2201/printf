@@ -16,7 +16,7 @@ void handle_backslash(int *sum, char follow_char)
 			follow_char == 't' || follow_char == 'v')
 	{
 		_putchar('\\' + follow_char);
-		*sum = *sum + 2;
+		*sum = *sum + 1;
 	}
 	else
 	{
