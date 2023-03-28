@@ -87,7 +87,7 @@ void handle_int(int *sum, int d)
 void handle_percision(char f, int *sum, va_list ap, int *i)
 {
 	char c, *s;
-	int d;
+	long d;
 
 	switch (f)
 	{
